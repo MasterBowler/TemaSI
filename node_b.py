@@ -23,6 +23,7 @@ def handle_node_a(conn):
     ciphertext = Iv
     #receive one 16 bytes chunk at a time
     while chunk := conn.recv(16):
+        print(chunk)
         if opperation_mode == 'ECB':
             chunk = cipher.decrypt(chunk) #ECB mode
             plaintext = chunk
